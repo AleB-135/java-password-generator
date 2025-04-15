@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class PasswordGenerator {
 
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) {
         
     
         Scanner scanner = new Scanner(System.in);
