@@ -2,33 +2,44 @@ import java.util.Scanner;
 
 public class PasswordGenerator {
 
+
     public static void main(String[] args) throws Exception{
         
-        Scanner input = new Scanner(System.in);
+    
+        Scanner scanner = new Scanner(System.in);
        
         System.out.println("Inserisci il tuo nome");
-        String nome = input.nextLine();
+        String nome = scanner.nextLine();
+        nome = Character.toUpperCase(nome.charAt(0)) + nome.substring(1).toLowerCase();
 
         System.out.println("Inserisci il tuo cognome");
-        String cognome = input.nextLine();
+        String cognome = scanner.nextLine();
+        cognome = Character.toUpperCase(cognome.charAt(0)) + cognome.substring(1).toLowerCase();
 
         System.out.println("Inserisci il tuo colore preferito");
-        String colorePreferito = input.nextLine();
+        String colorePreferito = scanner.nextLine();
 
-        System.out.println("Inserisci il tuo giorno di nascita in cifre");
-        String giornoInserito = input.nextLine();
-        int giornoDiNascita = Integer.parseInt(giornoInserito);
+        System.out.println("Inserisci il tuo giorno di nascita");
+        String giorno = scanner.nextLine();
+        
+        System.out.println("Inserisci il tuo mese di nascita");
+        String mese = scanner.nextLine();
+    
+        System.out.println("Inserisci il tuo anno di nascita");
+        String anno = scanner.nextLine();
+    
+        int sommaNascita = Integer.parseInt(giorno) + Integer.parseInt(mese) + Integer.parseInt(anno);
 
-        System.out.println("Inserisci il tuo mese di nascita in cifre");
-        String meseInserito = input.nextLine();
-        int meseDiNascita = Integer.parseInt(meseInserito);
+        String risultato = String.format("%s-%s-%s-%d", nome, cognome, colorePreferito, sommaNascita);
 
-        System.out.println("Inserisci il tuo anno di nascita in cifre");
-        String annoInserito = input.nextLine();
-        int annoDiNascita = Integer.parseInt(annoInserito);
-
-        System.out.println("La tua nuova password è: " + nome + "-" + cognome + "-"  + colorePreferito + "-" + (giornoDiNascita + meseDiNascita + annoDiNascita));
-
-        input.close();
+        System.out.println("La tua nuova password è: ");
+        System.out.println(risultato);
+        
+        scanner.close();
     }
-}
+        
+        }
+
+
+    
+
